@@ -42,7 +42,7 @@ const CartScreen = ({ match, location, history }) => {
         <h1>Shopping Cart</h1>
         {cartItems.length === 0 ? (
           <Message>
-            Your Cart is Empty <Link to="/">Go Back</Link>{" "}
+            Your Cart is Empty <Link to="/">Go Back</Link>
           </Message>
         ) : (
           <ListGroup variant="flush">
@@ -60,11 +60,11 @@ const CartScreen = ({ match, location, history }) => {
                     <Form.Control
                       as="select"
                       value={item.qty}
-                      onChange={(e) => {
+                      onChange={(e) =>
                         dispatch(
                           addToCart(item.product, Number(e.target.value))
-                        );
-                      }}
+                        )
+                      }
                     >
                       {[...Array(item.countInStock).keys()].map((x) => (
                         <option key={x + 1} value={x + 1}>
